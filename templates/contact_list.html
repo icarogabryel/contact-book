@@ -1,0 +1,11 @@
+{% extends "components/base.html" %}
+
+{% block content %}
+    <h1>Contact List</h1>
+    <button><a href="{% url 'contact_create' %}">New Contact</a></button>
+    <ul>
+        {% for contact in contacts %}
+            <li><a href="/{{ contact.pk }}/">{{ contact.name }} - {{ contact.email }} - {{ contact.phone }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
